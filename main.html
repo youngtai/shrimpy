@@ -38,7 +38,7 @@ let keySpace;
 
 let playerTailKickReady = true;
 
-const PLAYER_DEFAULT_SPEED = 300;
+const PLAYER_DEFAULT_SPEED = 315;
 const FISH_MAX_SPEED = 275;
 const TAIL_KICK_MULTIPLIER = 5; // Multiply current player velocity by this when tail is kicked
 const TAIL_KICK_COOLDOWN_TIME = 10000; // 10 seconds
@@ -52,7 +52,7 @@ function preload() {
 }
 
 function create() {
-  this.add.image(400, 300, 'background').setScale(15);
+  this.add.image(7000, 4000, 'background').setScale(17);
 
   this.anims.create({
     key: 'swim-left',
@@ -135,11 +135,11 @@ function create() {
 
   fishGroup = this.physics.add.group({
     key: 'fish',
-    repeat: 19
+    repeat: 49
     // setXY: {x: 100, y: 100, stepX: 75, stepY: 50}
   });
   fishGroup.children.iterate(child => {
-    child.setPosition(randomInt(0, 7000), randomInt(0, 4000));
+    child.setPosition(randomInt(100, 7000), randomInt(100, 4000));
     child.setCollideWorldBounds(true);
     child.setBounce(0.35);
     // child.setDrag(50);
